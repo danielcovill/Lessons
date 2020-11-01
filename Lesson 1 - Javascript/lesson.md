@@ -15,7 +15,7 @@
         * Hoisting (declarations go up, not initializations) [MDN - Hoisting](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting)
     * Naming restrictions
     * Naming formats (flat case, camelCase, PascalCase, sanke_case, kebab-case)
-    * Types
+    * Types [MDN - Types](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
         * Object vs Primitive
         * Primitives have no properties but javascript will wrap them up for you automatically
             * undefined
@@ -30,7 +30,8 @@
             * They're objects [Frontend Mayhem - Arrays vs Objects](https://www.frontendmayhem.com/javascript-arrays-objects/)
             * They have special stuff added [MDN - Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
         * String (single v double quotes and nesting)
-        * Show dynamic nature with typeOf() by assigning and reassigning the same variable (this is JS specific)
+        * Show dynamic nature with typeof by assigning and reassigning the same variable (this is JS specific)
+        * Show how we can use instanceof for figuring out some object stuff
 * Operators [MDN - Operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators)
 * Control flows
     * if / then / else
@@ -55,6 +56,7 @@
         * Read about arrow functions [Arrow functions](https://www.w3schools.com/js/js_arrow_function.asp)
 * Type
     * == vs ===
+    * 
 * BuiltIn JS Stuff
     * Console Methods 
     * Math
