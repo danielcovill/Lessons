@@ -34,21 +34,16 @@ class Calculator {
 		//fill me in
 	}
 	
-	//resets the current value in the calculator to zero and stores that action in history
-	clear() {
-		//fill me in
-	}
+	//Create a clear method that resets the current value in the calculator to zero and stores that action in history
+	//fill me in
 	
-	//clears all the history from the history array
-	resetHistory() {
-		//fill me in
-	}
+	//Create a method to clear all the history from the history array
+	//fill me in
+	
 
-	//gets the most recent history item from the history array
-	getLastAction() {
-		//fill me in
-	}
-
+	//Create a method to get the most recent history item from the history array
+	//fill me in
+	
 	//returns all actions in the history array as a single string
 	//each action should be separated by a new line '\n'. There's a really good way to do this using one of the
 	//built in array operations

@@ -56,7 +56,6 @@
         * Read about arrow functions [Arrow functions](https://www.w3schools.com/js/js_arrow_function.asp)
 * Type
     * == vs ===
-    * 
 * BuiltIn JS Stuff
     * Console Methods 
     * Math
