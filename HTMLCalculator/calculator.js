@@ -26,6 +26,12 @@ class Calculator {
 			this.decimalNext = false;
 		} else {
 			//fixme by trimming one place off the workingValue
+			//this is actually very difficult due to the implementation and
+			//javascript's limitations on how it manages numbers. 
+			//e.g. In base10, the value 7/10 can't be represented cleanly resulting
+			//in the calculated value being a very long decimal place. How do I undo
+			//that without keeping a long running history of the calculations and 
+			//backing up operations?
 		}
 		return this.workingValue;
 	}
