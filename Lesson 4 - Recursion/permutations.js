@@ -2,7 +2,7 @@
 //base case: 1 letter, 1 way, one array containing one string
 //growth case: current letter in front of all the possible ways of the remaining parts
 
-let permuteMe = "123";
+const permuteMe = "123";
 
 let answer = arrayOfPermutations(permuteMe);
 for (const arrangement of answer) {
