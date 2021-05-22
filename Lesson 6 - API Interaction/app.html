@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Fetch tutorial</title>
+    <link type="text/css" rel="stylesheet" href="./style.css" />
+    <script src="./request.js" defer></script>
+</head>
+
+<body>
+    <div>
+        <a href="#" id="clear">clear</a>
+    </div>
+    <div>
+        <a href="#" id="callsyncdpromises">call syncd promises</a>
+    </div>
+    <div>
+        <a href="#" id="callasync">call async</a>
+    </div>
+    <table id="results">
+        <tr>
+            <th data-column="joke1">Joke 1</th>
+            <th data-column="joke2">Joke 2</th>
+            <th data-column="ip1">IP 1</th>
+            <th data-column="ip2">IP 2</th>
+        </tr>
+        <tr id="responses">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr id="timings">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+
+</html>

@@ -20,7 +20,7 @@ Understanding RESTful API basics from the calling side.
 
 # Homework 1
 1. Use insomnia to show the location of your IP address using [FreeGeoIP](https://freegeoip.app/)
-1. Use insomnia to show the location of another IP address using FreeGeoIP
+1. Use insomnia to show the location of a random IP address using FreeGeoIP
 1. Use insomnia to demonstrate shortening a link via an authenticated POST request against [Bit.ly](https://dev.bitly.com/api-reference/)
 
 # Lesson 2
@@ -33,11 +33,10 @@ Making requests to APIs using Javascript, leading into Javascript promises. Doin
 
 # Homework 2
 Make the same requests we made in Insomnia using javascript from within a webpage and display the results of those requests on a webpage 
-1. Create a table with a header row containing names for the 3 calls each in separate columns
+1. Create a table with a header row containing 4 columns (joke1, joke2, geoip1, geoip2)
 1. In a row below the header, indicate the status of the call ("not started", "pending", or the actual result)
+1. In the row below that indicate the time from the start of the button click to make API requests, to the fulfillment (or failure) of each request in milliseconds
 1. Put a "clear" link, a "call sync" link, and a "call async" link at the top of the page
 1. Make the click action for "clear" reset all the statuses to "not started"
 1. Make the click action for "call sync" reset all the statuses synchronously 
 1. Make the click action for "call asynch" reset all the statuses asynchronously
-Keep in mind that your free bitly account only gets so many calls, so you'd do well to make sure you know what you're doing with those free calls before attempting to get the bitly call working
-
