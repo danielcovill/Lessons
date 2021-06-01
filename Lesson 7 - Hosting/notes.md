@@ -31,44 +31,5 @@ This isn't the only way to do this but it's a good way. It lets us generate docu
 
 1. Install [OpenAPI Editor](https://marketplace.visualstudio.com/items?itemName=42Crunch.vscode-openapi)
 1. See the example of what an API document can look like by looking at the [Smartwyre API](https://docs.smartwyre.info/)
-1. Look at the [Swagger documentation](https://swagger.io/specification/) to see how to fill the fields in
+1. Look at the [Swagger documentation](https://swagger.io/specification/basic-structure/) to see how to fill the fields in
 1. Follow the quickstart guide for developing your first bit of documentation
-
-
-*List of Server Endpoints*
-#### POST /games
-Ceates a game and returns a JSON object containing the gamer id
-
-Request parameters:
-None
-
-Request body:
-players (required) - Must be an integer 2-10
-name (required) - must be a string of less than 20 characters, may not be blank
-
-Example request:
-{
-    players: {playerCount}
-    name: {startingPlayerName}
-    password: {password}
-}
-
-Responses: 
-201 - Created
-{
-    gameId: {id}
-}
-
-400 - Bad Request
-{
-    error: {string containing error details}
-}
-
-500 - Server error
-{
-    error: {string containing error details}
-}
-
-GET /games/{id}
-Returns the state of the game
-Request parameters:
