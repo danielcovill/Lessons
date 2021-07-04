@@ -31,3 +31,15 @@ This part isn't necessary, but it is kind of a nice tool to have. I choose to us
 We'll be using a NodeJS library called [Koa](https://koajs.com/) to support the development of our API. Koa handles the routing and other foundational tasks so that we can just write the API endpoints and the code relevant to our application. 
 
 * On the WSL command line, navigate to the folder that contains your project and run `npm i koa`
+
+# Get started with a simple API endpoint
+I'm following the instructions [here](https://codeburst.io/lets-build-a-rest-api-with-koa-js-and-test-with-jest-2634c14394d3) because they seem pretty accurate and straightforward. 
+1. Run `npm init -y` - This creates a package.json file in your project which contains a bunch of information about your project and some info on how to run certain scripts. More information can be found [here](https://nodesource.com/blog/an-absolute-beginners-guide-to-using-npm/)
+1. Create a file named `app.js` in the root of your project. In this file we'll reference the koa package and the koa-router package and eventually build out our API calls.
+1. Set up the package.json file you generated in the first step above. It probably automatically picked up your github repository information, but we're going to need to add a few things.
+    1. Description: I just put "uno game api" but you can get as detailed as you want
+    1. Run commands: I added an entry in the "scripts" section of the file for "dev" that looks like `"dev": "node app.js"`. TODO
+1. Install the koa and koa-router packages. Note that these will also update your package.json file in the "dependencies" section. If you recall from previous node work we've done, this is so you can distribute just your code, and let someone else download the packages it depends on separately. This keeps a million copies of the dependencies from following your code around everywhere.
+    1. `npm install koa`
+    1. `npm install koa-router`
+1. Set up the `app.js` file as described in the instructions above and then run `npm run dev`. At this point you should be able to navigate to `127.0.0.1:3000` on your localhost and see that it returns "Hello World" in the body and a 200 response. Hitting any other endpoint gets you a 404, not found response which is something Koa provides as part of the library.
