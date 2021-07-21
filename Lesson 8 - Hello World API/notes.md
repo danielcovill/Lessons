@@ -34,12 +34,19 @@ We'll be using a NodeJS library called [Koa](https://koajs.com/) to support the 
 
 # Get started with a simple API endpoint
 I'm following the instructions [here](https://codeburst.io/lets-build-a-rest-api-with-koa-js-and-test-with-jest-2634c14394d3) because they seem pretty accurate and straightforward. 
+I also found [this link](https://www.digitalocean.com/community/tutorials/how-to-build-a-hello-world-application-with-koa) which is a bit more comprehensive I think.
+
 1. Run `npm init -y` - This creates a package.json file in your project which contains a bunch of information about your project and some info on how to run certain scripts. More information can be found [here](https://nodesource.com/blog/an-absolute-beginners-guide-to-using-npm/)
-1. Create a file named `app.js` in the root of your project. In this file we'll reference the koa package and the koa-router package and eventually build out our API calls.
+1. Create a file named `index.js` in the root of your project. In this file we'll reference the `koa` package and the `router` package and eventually build out our API calls.
 1. Set up the package.json file you generated in the first step above. It probably automatically picked up your github repository information, but we're going to need to add a few things.
     1. Description: I just put "uno game api" but you can get as detailed as you want
-    1. Run commands: I added an entry in the "scripts" section of the file for "dev" that looks like `"dev": "node app.js"`. TODO
-1. Install the koa and koa-router packages. Note that these will also update your package.json file in the "dependencies" section. If you recall from previous node work we've done, this is so you can distribute just your code, and let someone else download the packages it depends on separately. This keeps a million copies of the dependencies from following your code around everywhere.
+    1. Run commands: I added an entry in the "scripts" section of the file for "dev" that looks like `"dev": "node index.js"`. TODO
+1. Install the `koa` and `@koa/router` packages. Note that these will also update your package.json file in the "dependencies" section. If you recall from previous node work we've done, this is so you can distribute just your code, and let someone else download the packages it depends on separately. This keeps a million copies of the dependencies from following your code around everywhere.
     1. `npm install koa`
-    1. `npm install koa-router`
-1. Set up the `app.js` file as described in the instructions above and then run `npm run dev`. At this point you should be able to navigate to `127.0.0.1:3000` on your localhost and see that it returns "Hello World" in the body and a 200 response. Hitting any other endpoint gets you a 404, not found response which is something Koa provides as part of the library.
+    1. `npm install @koa/router`
+1. At this point I wanted to get an idea of what a folder structure should look like for a koa app. I found [this link](https://medium.com/swlh/advanced-koa-js-boilerplate-bda90c9abe24) which seems to have a pretty decent rundown. 
+    1. The important thing is to keep your project's API related files in a /api subfolder and break your routes down there. This helps with organization and clarity.
+    1. Create a `/api` folder into which we put our `index.js` file. Inside that folder we'll create subfolders for each of our routes
+    1. Create a `/config` folder, which we leave empty for now, but soon will contain configuration files.
+    1. We'll create more folders later but this gets the foundation down.
+1. Set up the `index.js` file as described in the instructions above (using `@koa/router` instead of `koa-router` because the latter is the new Koa supported package) and then run `npm run dev`. At this point you should be able to navigate to `127.0.0.1:3000` on your localhost and see that it returns "Hello World" in the body and a 200 response. Hitting any other endpoint gets you a 404, not found response which is something Koa provides as part of the library.
