@@ -30,13 +30,13 @@ This part isn't necessary, but it is kind of a nice tool to have. I choose to us
 ## Install Koa using node package manager
 We'll be using a NodeJS library called [Koa](https://koajs.com/) to support the development of our API. Koa handles the routing and other foundational tasks so that we can just write the API endpoints and the code relevant to our application. 
 
+* Run `npm init -y` - This creates a package.json file in your project which contains a bunch of information about your project and some info on how to run certain scripts. More information can be found [here](https://nodesource.com/blog/an-absolute-beginners-guide-to-using-npm/)
 * On the WSL command line, navigate to the folder that contains your project and run `npm i koa`
 
 # Get started with a simple API endpoint
 I'm following the instructions [here](https://codeburst.io/lets-build-a-rest-api-with-koa-js-and-test-with-jest-2634c14394d3) because they seem pretty accurate and straightforward. 
 I also found [this link](https://www.digitalocean.com/community/tutorials/how-to-build-a-hello-world-application-with-koa) which is a bit more comprehensive I think.
 
-1. Run `npm init -y` - This creates a package.json file in your project which contains a bunch of information about your project and some info on how to run certain scripts. More information can be found [here](https://nodesource.com/blog/an-absolute-beginners-guide-to-using-npm/)
 1. Create a file named `index.js` in the root of your project. In this file we'll reference the `koa` package and the `router` package and eventually build out our API calls.
 1. Set up the package.json file you generated in the first step above. It probably automatically picked up your github repository information, but we're going to need to add a few things.
     1. Description: I just put "uno game api" but you can get as detailed as you want
