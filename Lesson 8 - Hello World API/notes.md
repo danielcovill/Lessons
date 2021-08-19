@@ -45,8 +45,11 @@ I also found [this link](https://www.digitalocean.com/community/tutorials/how-to
     1. `npm install koa`
     1. `npm install @koa/router`
 1. At this point I wanted to get an idea of what a folder structure should look like for a koa app. I found [this link](https://medium.com/swlh/advanced-koa-js-boilerplate-bda90c9abe24) which seems to have a pretty decent rundown. 
-    1. The important thing is to keep your project's API related files in a /api subfolder and break your routes down there. This helps with organization and clarity.
+    1. The important thing is to keep your project's API related files in a /api subfolder and break your routes down there. This helps with organization and clarity but also because it's standard to have an API be behind a /api/v# type URL. 
     1. Create a `/api` folder into which we put our `index.js` file. Inside that folder we'll create subfolders for each of our routes
     1. Create a `/config` folder, which we leave empty for now, but soon will contain configuration files.
     1. We'll create more folders later but this gets the foundation down.
 1. Set up the `index.js` file as described in the instructions above (using `@koa/router` instead of `koa-router` because the latter is the new Koa supported package) and then run `npm run dev`. At this point you should be able to navigate to `127.0.0.1:3000` on your localhost and see that it returns "Hello World" in the body and a 200 response. Hitting any other endpoint gets you a 404, not found response which is something Koa provides as part of the library.
+    1. Why do we use `index.js`? This [stackoverflow link](https://stackoverflow.com/questions/21063587/what-is-index-js-used-for-in-node-js-projects) gives a good rundown and an additional link that describes the convention node uses when looking to build modules.
+
+)
