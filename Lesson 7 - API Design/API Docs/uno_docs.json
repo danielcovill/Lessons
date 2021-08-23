@@ -68,10 +68,18 @@
                         "type": "string",
                         "nullable": false
                     },
+                    "id": {
+                        "type": "string",
+                        "nullable": false
+                    },
                     "cardCount": {
                         "type": "integer",
                         "nullable": false,
                         "minimum": 0
+                    },
+                    "status": {
+                        "type": "string",
+                        "nullable": false
                     }
                 }
             },
@@ -94,7 +102,8 @@
                             "Draw 2",
                             "Skip",
                             "Reverse",
-                            "Draw 4"
+                            "Draw 4",
+                            "Wild"
                         ],
                         "nullable": false
                     },
@@ -233,11 +242,23 @@
                 "parameters": [
                     {
                         "name": "gameId",
-                        "in": "query",
+                        "in": "path",
                         "required": true,
                         "allowEmptyValue": false,
                         "description": "The id of the game that was returned when it was created.",
                         "example": "abc123",
+                        "schema": {
+                            "type": "string",
+                            "nullable": false
+                        }
+                    },
+                    {
+                        "name": "playerId",
+                        "in": "query",
+                        "required": true,
+                        "allowEmptyValue": false,
+                        "description": "The id of the player who is getting the game",
+                        "example": "anderson",
                         "schema": {
                             "type": "string",
                             "nullable": false
@@ -282,7 +303,35 @@
                 }
             },
             "post": {
-                "summary": "If a game is in either 'Won' or 'Lost' state, restarts the game with the same players.",
+                "summary": "Joins a game",
+                "parameters": [
+                    {
+                        "name": "gameId",
+                        "in": "path",
+                        "required": true,
+                        "allowEmptyValue": false,
+                        "description": "The id of the game that was returned when it was created.",
+                        "example": "abc123",
+                        "schema": {
+                            "type": "string",
+                            "nullable": false
+                        }
+                    },
+                    {
+                        "name": "userId",
+                        "in": "query",
+                        "required": true,
+                        "allowEmptyValue": false,
+                        "description": "The id of the player joining the game",
+                        "example": "Dan",
+                        "schema": {
+                            "type": "string",
+                            "nullable": false,
+                            "minLength": 1,
+                            "maxLength": 16
+                        }
+                    }
+                ],
                 "responses": {
                     "500": {
                         "description": "Internal Server Error"
@@ -293,6 +342,20 @@
         "/games/{gameId}/deck": {
             "post": {
                 "summary": "Returns a card pulled from the deck and into your hand.",
+                "parameters": [
+                    {
+                        "name": "playerId",
+                        "in": "query",
+                        "required": true,
+                        "allowEmptyValue": false,
+                        "description": "The id of the player who has just drawn a card",
+                        "example": "Anderson",
+                        "schema": {
+                            "type": "string",
+                            "nullable": false
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK - Card has been added to your deck",
@@ -316,6 +379,20 @@
         "/games/{gameId}/hand": {
             "get": {
                 "summary": "Retrieve a list of the cards in your hand.",
+                "parameters": [
+                    {
+                        "name": "playerId",
+                        "in": "query",
+                        "required": true,
+                        "allowEmptyValue": false,
+                        "description": "The id of the player who has just drawn a card",
+                        "example": "Anderson",
+                        "schema": {
+                            "type": "string",
+                            "nullable": false
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -337,6 +414,20 @@
             },
             "post": {
                 "summary": "Play a card from your hand.",
+                "parameters": [
+                    {
+                        "name": "playerId",
+                        "in": "query",
+                        "required": true,
+                        "allowEmptyValue": false,
+                        "description": "The id of the player who has just drawn a card",
+                        "example": "Anderson",
+                        "schema": {
+                            "type": "string",
+                            "nullable": false
+                        }
+                    }
+                ],
                 "requestBody": {
                     "description": "The card that is to be played. Must be a card that exists in your hand.",
                     "required": true,
@@ -381,6 +472,18 @@
             "post": {
                 "summary": "Calls UNO for yourself, or calls a player for failing to say 'Uno!'",
                 "parameters": [
+                    {
+                        "name": "playerId",
+                        "in": "query",
+                        "required": true,
+                        "allowEmptyValue": false,
+                        "description": "The id of the player who is calling UNO",
+                        "example": "Anderson",
+                        "schema": {
+                            "type": "string",
+                            "nullable": false
+                        }
+                    },
                     {
                         "name": "callFor",
                         "in": "query",
