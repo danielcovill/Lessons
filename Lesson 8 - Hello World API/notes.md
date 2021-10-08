@@ -51,5 +51,3 @@ I also found [this link](https://www.digitalocean.com/community/tutorials/how-to
     1. We'll create more folders later but this gets the foundation down.
 1. Set up the `index.js` file as described in the instructions above (using `@koa/router` instead of `koa-router` because the latter is the new Koa supported package) and then run `npm run dev`. At this point you should be able to navigate to `127.0.0.1:3000` on your localhost and see that it returns "Hello World" in the body and a 200 response. Hitting any other endpoint gets you a 404, not found response which is something Koa provides as part of the library.
     1. Why do we use `index.js`? This [stackoverflow link](https://stackoverflow.com/questions/21063587/what-is-index-js-used-for-in-node-js-projects) gives a good rundown and an additional link that describes the convention node uses when looking to build modules.
-
-)

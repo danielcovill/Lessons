@@ -25,6 +25,8 @@ Go through the use cases and develop what you think you'll need
 * It knows the rules of the game and can compute win states
     * Turn state might include information like "you've won!"
 
+### Authorization
+[This link](https://swagger.io/docs/specification/authentication/basic-authentication/) shows how to build this out
 
 ## Setting up OpenAPI 
 This isn't the only way to do this but it's a good way. It lets us generate documents that are human readable so other people can consume our API
